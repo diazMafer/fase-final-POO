@@ -152,6 +152,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jlMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlMenu2MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jlMenu2MouseExited(evt);
             }
@@ -200,6 +203,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jlMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlMenu5MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jlMenu5MouseExited(evt);
             }
@@ -383,6 +389,28 @@ public class Login extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jlMenu4MouseClicked
+
+    private void jlMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMenu2MouseClicked
+        try {
+            // TODO add your handling code here:
+            HotelesD ho = new HotelesD();
+            ho.setVisible(true);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jlMenu2MouseClicked
+
+    private void jlMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMenu5MouseClicked
+       
+            // TODO add your handling code here:
+            EventoD lu = new EventoD();
+            lu.setVisible(true);
+       
+        
+    }//GEN-LAST:event_jlMenu5MouseClicked
 
     /**
      * @param args the command line arguments
