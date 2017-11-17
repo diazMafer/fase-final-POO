@@ -393,7 +393,7 @@ public class Login extends javax.swing.JFrame {
     private void jlMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMenu2MouseClicked
         try {
             // TODO add your handling code here:
-            HotelesD ho = new HotelesD();
+            LugarD ho = new LugarD();
             ho.setVisible(true);
         } catch (MalformedURLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
