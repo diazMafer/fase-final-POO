@@ -468,18 +468,49 @@ public class Departamento{
        }
        
        return retorno;
-   } 
+   }
+   public int[] vectorH(String nombre){
+       int[] vector = new int[5];
+       for(Hotel x: cc.mostrarHoteles()){
+           if(x.getNombre().equals(nombre)){
+                vector[0]=x.getC1();
+                vector[1]=x.getC2();
+                vector[2]=x.getC3();
+                vector[3]=x.getC4();
+                vector[4]=x.getC5();
+           }
+           
+       }
+       return vector;
+   }
 
    public int calificacionHTotal(String nombre){
        int conteo = 0;
+       int cant =0;
+       int prom=0;
        for(Hotel cont: cc.mostrarHoteles()){
            if(cont.getNombre().equals(nombre)){
                conteo = cont.getC1()*1+cont.getC2()*2+cont.getC3()*3+cont.getC4()*4+cont.getC5()*5;
-               cc.updateCalH(conteo);
+               cant = cantVotosH(nombre);
+               prom = (conteo/cant);
+               cc.updateCalH(prom);
                
            }
        }
-       return conteo;
+       return prom;
+   }
+   public int porcentaje(int x, int y){
+       int por = (x/y)*100;
+       return por;
+   }
+   public int cantVotosH(String nombre){
+       int cant =0;
+       for(Hotel cont: cc.mostrarHoteles()){
+           if(cont.getNombre().equals(nombre)){
+               cant = cont.getC1()+cont.getC2()+cont.getC3()+cont.getC4()+cont.getC5();
+           }
+       }
+       return cant;
    }
    
    /**
