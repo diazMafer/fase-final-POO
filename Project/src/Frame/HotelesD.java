@@ -55,6 +55,10 @@ public class HotelesD extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jbBuscar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,7 +106,7 @@ public class HotelesD extends javax.swing.JFrame {
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 350, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 350, 190));
 
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Enter_OFF.png"))); // NOI18N
         jbBuscar.setBorder(null);
@@ -119,13 +123,38 @@ public class HotelesD extends javax.swing.JFrame {
         });
         jPanel1.add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 120, 40));
 
-        jLabel2.setText("Redireccionar");
+        jLabel2.setText("Reservar Habitación");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+
+        jLabel3.setText("1");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 30, 30));
+
+        jLabel4.setText("2");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
+
+        jLabel5.setText("3");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 10, 20));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 40, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 420));
 
@@ -157,6 +186,7 @@ public class HotelesD extends javax.swing.JFrame {
             jTextArea1.setText(datos);
         } else {
             jTextArea1.setText(dep.infoHotel(n));
+            jTextField1.setText(String.valueOf(dep.calificacionHTotal(n)));
         }
 
     }//GEN-LAST:event_jbBuscarActionPerformed
@@ -179,6 +209,40 @@ public class HotelesD extends javax.swing.JFrame {
         back.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        try{
+        dep.calificacionHBarra("1", txtNombre.getText());
+        jTextField1.setText(String.valueOf(dep.calificacionHTotal(txtNombre.getText())));
+        JOptionPane.showMessageDialog(null, "Si funciona");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "No funciona");
+        }
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        try{
+        dep.calificacionHBarra("2", txtNombre.getText());
+        jTextField1.setText(String.valueOf(dep.calificacionHTotal(txtNombre.getText())));
+        JOptionPane.showMessageDialog(null, "Si funciona");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "No funciona");
+        }
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        try{
+        dep.calificacionHBarra("3", txtNombre.getText());
+        jTextField1.setText(String.valueOf(dep.calificacionHTotal(txtNombre.getText())));
+        JOptionPane.showMessageDialog(null, "Si funciona");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "No funciona");
+        }
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -226,9 +290,13 @@ public class HotelesD extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

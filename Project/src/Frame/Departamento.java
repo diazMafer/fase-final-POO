@@ -33,7 +33,7 @@ public class Departamento{
 
         
         //Se guarda un poco de información de los lugares turisticos para el programa ya inicie con ellos
-            
+            /**
             Hotel h1 = new Hotel("Hote","12 Av Zona 1.","Guatemala","descripcion",0.0, 0, 0, 0, 0, 0, "telefono: 223332","estecorreonoesfalso@gmail.com", x);
             cc.addHotel(h1);
             Restaurante r1 = new Restaurante("restaurante cool", "dasdsa","Guatemala","sads", 0.0, 0, 0, 0, 0, 0,"7-14","telefono: 55", x);
@@ -48,6 +48,7 @@ public class Departamento{
             cc.addRestaurante(r5);
             LugarT l1 = new LugarT("nombre lugar","address","Guate", "construccion",0.0,0,0,0, 0, 0, "6-8pm",x);           
             cc.addLugar(l1);
+            */
             
     }
     
@@ -431,24 +432,50 @@ public class Departamento{
        int retorno = 0; 
        int cant = 0;
        for(Hotel cont: cc.mostrarHoteles()){
-           if(val.equals("1")){
-               if(cont.getNombre().equals(nombre)){
-                   cont.addC1();
-                   retorno = cont.getC1();
-                   cc.updateCH1(retorno);
-                   
-                   
-               }
-           }
+           if (val.equals("1")){
+                if(cont.getNombre().equals(nombre)){
+                    cont.addC1();
+                    retorno = cont.getC1();
+                    cc.updateCH1(retorno);
+                }
+        
+            } else if (val.equals("2")){
+                if(cont.getNombre().equals(nombre)){
+                    cont.addC2();
+                    retorno =cont.getC2();
+                    cc.updateCH2(retorno);
+                
+                }
+            } else if (val.equals("3")){
+                if(cont.getNombre().equals(nombre)){
+                    cont.addC3();
+                    retorno =cont.getC3();   
+                    cc.updateCH3(retorno);
+                }
+            } else if (val.equals("4")){
+                if(cont.getNombre().equals(nombre)){
+                    cont.addC4();
+                    retorno =cont.getC4();
+                    cc.updateCH4(retorno);
+                }
+            } else if (val.equals("5")){
+                if(cont.getNombre().equals(nombre)){
+                    cont.addC5();
+                    retorno =cont.getC5();  
+                    cc.updateCH5(retorno);
+                }
+            }
        }
+       
        return retorno;
    } 
 
-   public double calificacionHTotal(String nombre){
-       double conteo = 0;
+   public int calificacionHTotal(String nombre){
+       int conteo = 0;
        for(Hotel cont: cc.mostrarHoteles()){
            if(cont.getNombre().equals(nombre)){
                conteo = cont.getC1()*1+cont.getC2()*2+cont.getC3()*3+cont.getC4()*4+cont.getC5()*5;
+               cc.updateCalH(conteo);
                
            }
        }

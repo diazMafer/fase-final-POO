@@ -81,7 +81,7 @@ public class Lugar {
             return c2;
         }
         public void addC2(){
-            c2 +=1;
+            c2=c2+1;
         
         }
         public int getC3(){
