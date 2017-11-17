@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 public class LugarD extends javax.swing.JFrame {
     private Departamento dep;
     private GraficaL gh;
+    private String val;
 
     /**
      * Creates new form LugarD
@@ -28,6 +29,7 @@ public class LugarD extends javax.swing.JFrame {
         initComponents();
         dep = new Departamento();
         gh = new GraficaL();
+        val="0";
     }
 
     /**

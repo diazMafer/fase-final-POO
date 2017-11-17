@@ -23,6 +23,7 @@ public class HotelesD extends javax.swing.JFrame {
     private Conectar cc;
     private GraficaH gh;
     private Hotel reservar;
+    private String val;
     
 
     /**
@@ -34,6 +35,7 @@ public class HotelesD extends javax.swing.JFrame {
         cc = new Conectar();
         gh = new GraficaH();
         reservar = new Hotel();
+        val="0";
         
     }
 

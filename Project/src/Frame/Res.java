@@ -311,6 +311,8 @@ public class Res extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         dep.calificacionHBarra(val,txtNombre.getText());
+        int[] vector=dep.vectorH(txtNombre.getText());
+        txtNombre.setText(Integer.toString(dep.porcentaje(vector[0],dep.cantVotosH(txtNombre.getText()))));
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
